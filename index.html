@@ -17,7 +17,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-back-btn">
+            <a href="https://jack-huston.github.io/#projects" class="nav-back-btn">
                 <i data-lucide="arrow-left"></i>
                 <span>Back to Portfolio</span>
             </a>
@@ -55,20 +55,20 @@
             </div>
             <h1 class="project-hero-title">Ice Plume Particle Detector</h1>
             <p class="project-hero-subtitle">
-                A charged particle detection instrument for spacecraft flying through Enceladus' ice plumes
+                A charged ice particle detection instrument for a spacecraft flying through Enceladus' ice ejecta plumes
             </p>
             <div class="project-meta">
                 <div class="meta-item">
                     <i data-lucide="calendar"></i>
-                    <span>2023 - 2024</span>
+                    <span>2022 - 2024</span>
                 </div>
                 <div class="meta-item">
                     <i data-lucide="map-pin"></i>
-                    <span>University Research Lab</span>
+                    <span>University of Colorado, Boulder</span>
                 </div>
                 <div class="meta-item">
                     <i data-lucide="users"></i>
-                    <span>Team of 4</span>
+                    <span>Team of 9</span>
                 </div>
             </div>
         </div>
@@ -86,17 +86,17 @@
                 <div class="overview-content">
                     <h3 class="overview-heading">Mission</h3>
                     <p class="overview-text">
-                        This project focused on developing and prototyping a charged particle detection instrument designed for spacecraft flying through Enceladus' ice plumes. The detector enables in-situ analysis of charged ice grains to study the subsurface ocean composition.
+                        This project focused on developing and prototyping a charged particle detection instrument designed for spacecraft flying through Enceladus' ice plumes. Geysers on teh south pole of Saturn's moon eject water into space, where a satellite sent by the project's sponsor, ASTROBi, would pass through it. This detector would enable in-situ analysis of the relative magnitude of ice particles that the satellite is passing through.
                     </p>
                     
                     <h3 class="overview-heading">Challenge</h3>
                     <p class="overview-text">
-                        Design a compact, reliable instrument capable of detecting and characterizing charged particles in the harsh space environment while maintaining precise measurements at extremely low temperatures.
+                        Design a proof-of-concept sensor that can reliably detect when a spacecraft is inside Enceladus’ ice plumes and characterize individual, weakly charged micron-scale particles (0.5–4 µm; 100–300 m/s) by their presence, charge, and speed. The system must operate in a vacuum, and fit within a 1U (10cm x 10cm x 10cm) and operate at < 10 Watts. 
                     </p>
                     
                     <h3 class="overview-heading">Solution</h3>
                     <p class="overview-text">
-                        Developed mechanical and electronic subsystems that integrate sensor arrays, signal processing electronics, and thermal management systems into a robust package suitable for deep space missions.
+                        Constructed a dual-mode electrostatic charge detector that combines a conduction based cup (bulk charge flux) with a grid-based induction stage (individual particle charge and speed), using custom charge amplifiers, a 1 Million samples per second (MSPS) ADC, and a convolution filter event detection system on a Raspberry Pi.
                     </p>
                 </div>
             </div>
@@ -112,6 +112,10 @@
                     <span class="tech-tag">Manufacturing</span>
                     <span class="tech-tag">Signal Processing</span>
                     <span class="tech-tag">Thermal Analysis</span>
+                    <span class="tech-tag">Embedded Systems</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Environmental Testing</span>
+
                 </div>
             </div>
         </div>
@@ -129,13 +133,13 @@
                 <div class="detail-content">
                     <h3 class="detail-title">Electronics Design</h3>
                     <p class="detail-text">
-                        Designed custom PCB layouts for sensor signal conditioning, amplification, and digitization. Implemented low-noise circuitry to handle extremely small charge signals from individual particle impacts.
+                        Designed a custom PCB layouts for sensor signal conditioning, amplification, and digitization. Implemented low-noise circuitry to handle extremely small charge signals (~300 electrons) from individual particle impacts.
                     </p>
                     <ul class="detail-list">
                         <li>Custom charge amplifier circuits with sub-pA noise floors</li>
                         <li>Multi-channel data acquisition system</li>
-                        <li>Radiation-hardened component selection</li>
-                        <li>Power management for space-grade operation</li>
+                        <li>EMI/EMC protected system for noise reduction</li>
+                        <li>Surface mount PCB development</li>
                     </ul>
                 </div>
             </div>
@@ -147,13 +151,13 @@
                 <div class="detail-content">
                     <h3 class="detail-title">Mechanical Systems</h3>
                     <p class="detail-text">
-                        Developed mechanical housing and sensor mounting structures using SolidWorks. Ensured structural integrity for launch loads while maintaining precise sensor alignment and thermal stability.
+                        Developed mechanical housing and sensor structures using SolidWorks. Ensured structural integrity for shipping and handling while maintaining required faraday cage capabilities, electrical noise isolation, and thermal dissipation requirements.
                     </p>
                     <ul class="detail-list">
                         <li>CAD modeling and FEA structural analysis</li>
                         <li>Thermal management and insulation design</li>
-                        <li>Vibration isolation systems</li>
-                        <li>Integration with spacecraft interfaces</li>
+                        <li>EMI/EMC noise analyis and optimization</li>
+                        <li>Management of extremely tight packaging restrictions</li>
                     </ul>
                 </div>
             </div>
@@ -165,13 +169,13 @@
                 <div class="detail-content">
                     <h3 class="detail-title">Software & Data Processing</h3>
                     <p class="detail-text">
-                        Implemented real-time data acquisition and processing algorithms in C++ and LabVIEW. Developed MATLAB analysis tools for post-processing and scientific interpretation of particle measurements.
+                        Implemented real-time data acquisition and processing algorithms in C++ and Python. Developed MATLAB analysis tools for post-processing and scientific interpretation of particle measurements.
                     </p>
                     <ul class="detail-list">
-                        <li>Real-time signal processing algorithms</li>
-                        <li>Particle event detection and classification</li>
-                        <li>Data compression for telemetry</li>
-                        <li>Ground support equipment software</li>
+                        <li>Real-time signal processing algorithms to handle 1 million voltage samples collected per second</li>
+                        <li>Automated particle event detection and classification</li>
+                        <li>Data compression for efficient storage</li>
+                        <li>Ground support equipment & testing software</li>
                     </ul>
                 </div>
             </div>
@@ -184,53 +188,55 @@
             <h2 class="section-title">Technical Specifications</h2>
             
             <div class="specs-grid">
-                <div class="spec-card">
-                    <div class="spec-header">
-                        <i data-lucide="zap"></i>
-                        <h3>Power Requirements</h3>
-                    </div>
-                    <div class="spec-content">
-                        <p><strong>Operating Voltage:</strong> 28V ± 4V</p>
-                        <p><strong>Power Consumption:</strong> 5W nominal, 8W peak</p>
-                        <p><strong>Standby Mode:</strong> < 0.5W</p>
-                    </div>
+              <div class="spec-card">
+                <div class="spec-header">
+                  <i data-lucide="zap"></i>
+                  <h3>Power Requirements</h3>
                 </div>
-
-                <div class="spec-card">
-                    <div class="spec-header">
-                        <i data-lucide="thermometer"></i>
-                        <h3>Environmental</h3>
-                    </div>
-                    <div class="spec-content">
-                        <p><strong>Operating Temp:</strong> -40°C to +50°C</p>
-                        <p><strong>Survival Temp:</strong> -60°C to +70°C</p>
-                        <p><strong>Vacuum:</strong> 10⁻⁶ torr operational</p>
-                    </div>
+                <div class="spec-content">
+                  <p><strong>Input Rails:</strong> ±9 V to sensor; locally regulated to +3.3 V (ADC) and ±5 V (CSAs)</p>
+                  <p><strong>Power Budget:</strong> ≤ 10 W (project requirement)</p>
+                  <p><strong>Interface:</strong> SPI ADC → Raspberry Pi 4 (1 MSPS per channel)</p>
                 </div>
-
-                <div class="spec-card">
-                    <div class="spec-header">
-                        <i data-lucide="ruler"></i>
-                        <h3>Physical Dimensions</h3>
-                    </div>
-                    <div class="spec-content">
-                        <p><strong>Size:</strong> 150mm × 100mm × 80mm</p>
-                        <p><strong>Mass:</strong> 1.2 kg</p>
-                        <p><strong>Material:</strong> Aluminum 6061-T6</p>
-                    </div>
+              </div>
+            
+              <div class="spec-card">
+                <div class="spec-header">
+                  <i data-lucide="thermometer"></i>
+                  <h3>Environmental</h3>
                 </div>
-
-                <div class="spec-card">
-                    <div class="spec-header">
-                        <i data-lucide="gauge"></i>
-                        <h3>Performance</h3>
-                    </div>
-                    <div class="spec-content">
-                        <p><strong>Detection Range:</strong> 0.1 - 100 fC</p>
-                        <p><strong>Time Resolution:</strong> 1 µs</p>
-                        <p><strong>Dynamic Range:</strong> > 60 dB</p>
-                    </div>
+                <div class="spec-content">
+                  <p><strong>Vacuum Compatibility:</strong> Operated nominally after survivability test at ~3.82 torr (509 Pa; ~0.005 atm)</p>
+                  <p><strong>Heat Dissipation:</strong> Verified in vacuum (no convection) under load</p>
+                  <p><strong>EMI/Noise Control:</strong> Faraday cage enclosure; low-noise analog layout & filtering</p>
                 </div>
+              </div>
+            
+              <div class="spec-card">
+                <div class="spec-header">
+                  <i data-lucide="ruler"></i>
+                  <h3>Physical Dimensions</h3>
+                </div>
+                <div class="spec-content">
+                  <p><strong>Envelope:</strong> ≤ 100 mm × 100 mm × 100 mm (CubeSat-class volume constraint)</p>
+                  <p><strong>Mass:</strong> <!-- TODO: provide value --> TBD</p>
+                  <p><strong>Materials:</strong> Aluminum enclosure with copper grids & copper wool internals</p>
+                </div>
+              </div>
+            
+              <div class="spec-card">
+                <div class="spec-header">
+                  <i data-lucide="gauge"></i>
+                  <h3>Performance</h3>
+                </div>
+                <div class="spec-content">
+                  <p><strong>Particle Size (target):</strong> 0.5–4 µm</p>
+                  <p><strong>Speed (measured):</strong> 100–300 m/s via dual sensing grids</p>
+                  <p><strong>Charge Sensitivity (induction):</strong> ~0.05–0.5 fC per particle</p>
+                  <p><strong>Charge Flux (conduction):</strong> Tracked vs reference; design environment ~86 pC/s</p>
+                  <p><strong>Sampling:</strong> 1 MSPS ADC; matched-filter event detection</p>
+                </div>
+              </div>
             </div>
 
             <div class="diagram-section">
@@ -244,70 +250,85 @@
     </section>
 
     <!-- Results & Impact Section -->
-    <section id="results" class="section">
-        <div class="container">
-            <h2 class="section-title">Results & Impact</h2>
-            
-            <div class="results-highlight">
-                <div class="highlight-card">
-                    <div class="highlight-number">95%</div>
-                    <div class="highlight-label">Detection Accuracy</div>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-number">1000+</div>
-                    <div class="highlight-label">Test Cycles Completed</div>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-number">TRL 4</div>
-                    <div class="highlight-label">Technology Readiness</div>
-                </div>
-            </div>
-
-            <div class="results-content">
-                <h3 class="results-heading">Key Achievements</h3>
-                <div class="achievement-grid">
-                    <div class="achievement-item">
-                        <i data-lucide="check-circle" class="achievement-icon"></i>
-                        <div class="achievement-text">
-                            <h4>Successful Prototype Validation</h4>
-                            <p>Completed full functional testing in simulated space environment conditions</p>
-                        </div>
-                    </div>
-                    <div class="achievement-item">
-                        <i data-lucide="check-circle" class="achievement-icon"></i>
-                        <div class="achievement-text">
-                            <h4>Performance Verification</h4>
-                            <p>Met all design requirements for sensitivity, noise floor, and dynamic range</p>
-                        </div>
-                    </div>
-                    <div class="achievement-item">
-                        <i data-lucide="check-circle" class="achievement-icon"></i>
-                        <div class="achievement-text">
-                            <h4>Thermal Testing</h4>
-                            <p>Validated operation across full temperature range with stable performance</p>
-                        </div>
-                    </div>
-                    <div class="achievement-item">
-                        <i data-lucide="check-circle" class="achievement-icon"></i>
-                        <div class="achievement-text">
-                            <h4>Documentation</h4>
-                            <p>Generated comprehensive technical documentation and test reports</p>
-                        </div>
-                    </div>
-                </div>
-
-                <h3 class="results-heading">Lessons Learned</h3>
-                <p class="results-text">
-                    This project provided invaluable experience in space instrumentation design, particularly in managing the trade-offs between sensitivity, power consumption, and radiation tolerance. The iterative design process taught the importance of early prototyping and comprehensive testing to identify potential issues before final fabrication.
-                </p>
-                
-                <h3 class="results-heading">Future Work</h3>
-                <p class="results-text">
-                    The next phase involves miniaturization for reduced mass and power, integration with advanced particle classification algorithms, and qualification testing for flight readiness. Potential applications extend beyond Enceladus to other icy moon missions.
-                </p>
-            </div>
+   <section id="results" class="section">
+      <div class="container">
+        <h2 class="section-title">Results &amp; Impact</h2>
+        
+        <div class="results-highlight">
+          <div class="highlight-card">
+            <div class="highlight-number">0.54%</div>
+            <div class="highlight-label">Average calibration error</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-number">509 Pa</div>
+            <div class="highlight-label">Vacuum survivability</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-number">0.4 pC/s</div>
+            <div class="highlight-label">Average measurement error versus known charge flux result</div>
+          </div>
         </div>
+    
+        <div class="results-content">
+          <h3 class="results-heading">Key Achievements</h3>
+          <div class="achievement-grid">
+              <div class="achievement-item">
+              <i data-lucide="check-circle" class="achievement-icon"></i>
+              <div class="achievement-text">
+                <h4>Personally Recieved Award for Technical Knowledge</h4>
+                <p>Was publically recognized at graduation for exceptional technical knowledge throughout the year for my work on this project. Was 1 of only 2 recepients who recieved this award. </p>
+              </div>
+            </div>
+            <div class="achievement-item">
+              <i data-lucide="check-circle" class="achievement-icon"></i>
+              <div class="achievement-text">
+                <h4>Prototype Validation Across Four Tests</h4>
+                <p>Completed direct-charge injection, open-air particle, vacuum survivability, and vacuum ice-grain tests with exceptional performance.</p>
+              </div>
+            </div>
+            <div class="achievement-item">
+              <i data-lucide="check-circle" class="achievement-icon"></i>
+              <div class="achievement-text">
+                <h4>Conduction Performance &amp; Calibration</h4>
+                <p>Generated calibration curve with 0.54% average error (all datasets within ±10%). In vacuum, sensor's measured charge flux matched test facility’s alternating 10 s pulses and intra-pulse structure with ~0.4 pC/s mean difference (Highly accurate).</p>
+              </div>
+            </div>
+            <div class="achievement-item">
+              <i data-lucide="check-circle" class="achievement-icon"></i>
+              <div class="achievement-text">
+                <h4>Induction Speed Measurement (Open Air)</h4>
+                <p>Dual-grid induction signals yielded velocity estimates within ~4–10% of kinematic expectations across test heights.</p>
+              </div>
+            </div>
+            <div class="achievement-item">
+              <i data-lucide="check-circle" class="achievement-icon"></i>
+              <div class="achievement-text">
+                <h4>Noise Mitigation &amp; Data Pipeline</h4>
+                <p>Faraday-cage enclosure, low-noise CSA design, and 1 MSPS SPI ADC with matched-filter event detection on Raspberry Pi reduced noise and data volume while preserving events.</p>
+              </div>
+            </div>
+            <div class="achievement-item">
+              <i data-lucide="check-circle" class="achievement-icon"></i>
+              <div class="achievement-text">
+                <h4>Requirement Verification</h4>
+                <p>Verified particle presence detection, speed estimation in induction (open air), vacuum compatibility/heat dissipation, and charge-flux tracking in conduction; documented test procedures and results.</p>
+              </div>
+            </div>
+          </div>
+    
+          <h3 class="results-heading">Lessons Learned</h3>
+          <p class="results-text">
+            Up-front requirements flow-down and risk tracking are critical; inventory and change control should live in a single source of truth. Noise was lower than anticipated, so combining induction and conduction electronics (shared power and a dual-channel ADC) could reduce size/cost/complexity. Robust harnessing, power-on indicators, and careful solder/reflow practices are essential; particularly for vacuum-rated components and to prevent trace damage.
+          </p>
+          
+          <h3 class="results-heading">Future Work</h3>
+          <p class="results-text">
+            Focus on generating a calibration curve specific to the vacuum-tested sensor to improve accuracy, redesigning and hardening the induction PCB to prevent solder and trace failures, and consolidating the conduction and induction electronics into a single board using a dual-channel ADC to reduce mass and complexity. Additional goals include integrating automated plume-detection thresholds and real-time plotting directly on the Raspberry Pi, improved wire management for mechanical stability, and conducting more detailed thermal modeling (e.g., via Thermal Desktop) to evaluate performance under expected temperature cycling and material expansion in flight-like environments.
+          </p>
+        </div>
+      </div>
     </section>
+
 
     <!-- Image Gallery Section -->
     <section class="section section-white">
@@ -340,11 +361,11 @@
             <h2 class="cta-title">Interested in Learning More?</h2>
             <p class="cta-text">I'd be happy to discuss this project in detail or explore collaboration opportunities.</p>
             <div class="cta-buttons">
-                <a href="index.html#contact" class="btn-cta-primary">
+                <a href="mailto:jackthuston1@gmail.com" class="btn-cta-primary">
                     <i data-lucide="mail"></i>
                     <span>Get in Touch</span>
                 </a>
-                <a href="index.html#projects" class="btn-cta-secondary">
+                <a href="https://jack-huston.github.io/#projects" class="btn-cta-secondary">
                     <i data-lucide="arrow-left"></i>
                     <span>View Other Projects</span>
                 </a>
