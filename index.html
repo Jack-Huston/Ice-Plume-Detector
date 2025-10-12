@@ -80,23 +80,24 @@
             <h2 class="section-title">Project Overview</h2>
             <div class="overview-grid">
                 <div class="overview-image-container">
-                    <img src="project-placeholder.jpg" alt="Ice Plume Particle Detector" class="overview-image">
-                    <div class="image-caption">The completed particle detector assembly</div>
+                    <!-- Mission CONOPS fits best here for context -->
+                    <img src="mission-conops.jpg" alt="Mission concept of operations for the detector" class="overview-image" loading="lazy">
+                    <div class="image-caption">Mission concept: spacecraft transits Enceladus’ plume and triggers instruments</div>
                 </div>
                 <div class="overview-content">
                     <h3 class="overview-heading">Mission</h3>
                     <p class="overview-text">
-                        This project focused on developing and prototyping a charged particle detection instrument designed for spacecraft flying through Enceladus' ice plumes. Geysers on teh south pole of Saturn's moon eject water into space, where a satellite sent by the project's sponsor, ASTROBi, would pass through it. This detector would enable in-situ analysis of the relative magnitude of ice particles that the satellite is passing through.
+                        This project focused on developing and prototyping a charged particle detection instrument designed for spacecraft flying through Enceladus' ice plumes. Geysers on the south pole of Saturn's moon eject water into space, where a satellite sent by the project's sponsor, ASTROBi, would pass through it. This detector would enable in-situ analysis of the relative magnitude of ice particles that the satellite is passing through.
                     </p>
                     
                     <h3 class="overview-heading">Challenge</h3>
                     <p class="overview-text">
-                        Design a proof-of-concept sensor that can reliably detect when a spacecraft is inside Enceladus’ ice plumes and characterize individual, weakly charged micron-scale particles (0.5–4 µm; 100–300 m/s) by their presence, charge, and speed. The system must operate in a vacuum, and fit within a 1U (10cm x 10cm x 10cm) and operate at < 10 Watts. 
+                        Design a proof-of-concept sensor that can reliably detect when a spacecraft is inside Enceladus’ ice plumes and characterize individual, weakly charged micron-scale particles (0.5–4 µm; 100–300 m/s) by their presence, charge, and speed. The system must operate in a vacuum, and fit within a 1U (10cm x 10cm x 10cm) and operate at &lt; 10 Watts. 
                     </p>
                     
                     <h3 class="overview-heading">Solution</h3>
                     <p class="overview-text">
-                        Constructed a dual-mode electrostatic charge detector that combines a conduction based cup (bulk charge flux) with a grid-based induction stage (individual particle charge and speed), using custom charge amplifiers, a 1 Million samples per second (MSPS) ADC, and a convolution filter event detection system on a Raspberry Pi.
+                        Constructed a dual-mode electrostatic charge detector that combines a conduction-based cup (bulk charge flux) with a grid-based induction stage (individual particle charge and speed), using custom charge amplifiers, a 1 Million samples per second (MSPS) ADC, and a convolution filter event detection system on a Raspberry Pi.
                     </p>
                 </div>
             </div>
@@ -132,6 +133,11 @@
                 </div>
                 <div class="detail-content">
                     <h3 class="detail-title">Electronics Design</h3>
+                    <!-- PCB image supports this subsection -->
+                    <div class="overview-image-container" style="margin-bottom: 1rem;">
+                        <img src="pcb_board.jpg" alt="Custom PCB for charge sensing and ADC interface" class="overview-image" loading="lazy">
+                        <div class="image-caption">Custom PCB used for charge amplification and 1 MSPS ADC acquisition</div>
+                    </div>
                     <p class="detail-text">
                         Designed a custom PCB layouts for sensor signal conditioning, amplification, and digitization. Implemented low-noise circuitry to handle extremely small charge signals (~300 electrons) from individual particle impacts.
                     </p>
@@ -150,13 +156,18 @@
                 </div>
                 <div class="detail-content">
                     <h3 class="detail-title">Mechanical Systems</h3>
+                    <!-- Component layout supports packaging/faraday cage narrative -->
+                    <div class="overview-image-container" style="margin-bottom: 1rem;">
+                        <img src="component-layout.jpg" alt="Component layout within the sensor housing" class="overview-image" loading="lazy">
+                        <div class="image-caption">Internal component layout and Faraday enclosure strategy</div>
+                    </div>
                     <p class="detail-text">
                         Developed mechanical housing and sensor structures using SolidWorks. Ensured structural integrity for shipping and handling while maintaining required faraday cage capabilities, electrical noise isolation, and thermal dissipation requirements.
                     </p>
                     <ul class="detail-list">
                         <li>CAD modeling and FEA structural analysis</li>
                         <li>Thermal management and insulation design</li>
-                        <li>EMI/EMC noise analyis and optimization</li>
+                        <li>EMI/EMC noise analysis and optimization</li>
                         <li>Management of extremely tight packaging restrictions</li>
                     </ul>
                 </div>
@@ -241,9 +252,10 @@
 
             <div class="diagram-section">
                 <h3 class="diagram-title">System Architecture</h3>
-                <div class="diagram-placeholder">
-                    <i data-lucide="network"></i>
-                    <p>System block diagram placeholder - Add your architecture diagram here</p>
+                <!-- Replace placeholder with the block diagram image -->
+                <div class="overview-image-container">
+                    <img src="block-diagram.jpg" alt="System block diagram of the I2CE detector" class="overview-image" loading="lazy">
+                    <div class="image-caption">Functional block diagram: conduction + induction sensing paths to ADC/Raspberry Pi</div>
                 </div>
             </div>
         </div>
@@ -268,6 +280,18 @@
             <div class="highlight-label">Average measurement error versus known charge flux result</div>
           </div>
         </div>
+
+        <!-- Main results plot belongs prominently here -->
+        <div class="overview-image-container" style="margin-top: 1.5rem;">
+          <img src="sensor_results.jpg" alt="Sensor results compared with facility reference showing strong agreement" class="overview-image" loading="lazy">
+          <div class="image-caption">Measured charge flux vs facility reference: alternating 10 s pulses and intra-pulse structure matched</div>
+        </div>
+
+        <!-- Vacuum testing photo reinforces environmental readiness -->
+        <div class="overview-image-container" style="margin-top: 1rem;">
+          <img src="vacuum-testing.jpg" alt="Vacuum chamber test at the facility" class="overview-image" loading="lazy">
+          <div class="image-caption">Vacuum survivability and particle testing at the ice grain accelerator facility</div>
+        </div>
     
         <div class="results-content">
           <h3 class="results-heading">Key Achievements</h3>
@@ -275,8 +299,8 @@
               <div class="achievement-item">
               <i data-lucide="check-circle" class="achievement-icon"></i>
               <div class="achievement-text">
-                <h4>Personally Recieved Award for Technical Knowledge</h4>
-                <p>Was publically recognized at graduation for exceptional technical knowledge throughout the year for my work on this project. Was 1 of only 2 recepients who recieved this award. </p>
+                <h4>Personally Received Award for Technical Knowledge</h4>
+                <p>Was publicly recognized at graduation for exceptional technical knowledge throughout the year for my work on this project. Was 1 of only 2 recipients who received this award.</p>
               </div>
             </div>
             <div class="achievement-item">
@@ -336,20 +360,20 @@
             <h2 class="section-title">Project Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="gallery-placeholder-1.jpg" alt="Project image 1">
-                    <div class="gallery-caption">PCB assembly and testing</div>
+                    <img src="packaged-sensor.jpg" alt="Sensor packaged prior to shipment" loading="lazy">
+                    <div class="gallery-caption">Packaged sensor for shipment to the testing facility</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery-placeholder-2.jpg" alt="Project image 2">
-                    <div class="gallery-caption">Mechanical integration</div>
+                    <img src="pcb_board.jpg" alt="Electronics board close-up" loading="lazy">
+                    <div class="gallery-caption">Electronics board assembled and verified</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery-placeholder-3.jpg" alt="Project image 3">
-                    <div class="gallery-caption">Thermal vacuum testing</div>
+                    <img src="vacuum-testing.jpg" alt="Vacuum chamber setup during test" loading="lazy">
+                    <div class="gallery-caption">Vacuum testing setup at the ice grain accelerator</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery-placeholder-4.jpg" alt="Project image 4">
-                    <div class="gallery-caption">Final prototype</div>
+                    <img src="sensor-in-space.jpg" alt="3D render of the sensor concept in space" loading="lazy">
+                    <div class="gallery-caption">3D concept render: sensor in space</div>
                 </div>
             </div>
         </div>
