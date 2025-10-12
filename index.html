@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
+        /* minimal helpers so images center nicely without touching your CSS file */
+        .stack-vertical > .stack-item { margin-bottom: 1rem; }
+        .stack-vertical > .stack-item:last-child { margin-bottom: 0; }
+        .centered-media { text-align: center; margin-top: 1rem; }
+        .centered-media img { max-width: 100%; height: auto; }
+        .centered-media .image-caption { margin-top: .5rem; }
     </style>
 </head>
 <body>
@@ -79,10 +83,20 @@
         <div class="container">
             <h2 class="section-title">Project Overview</h2>
             <div class="overview-grid">
-                <div class="overview-image-container">
-                    <!-- Mission CONOPS fits best here for context -->
-                    <img src="mission-conops.jpg" alt="Mission concept of operations for the detector" class="overview-image" loading="lazy">
-                    <div class="image-caption">Mission concept: spacecraft transits Enceladus’ plume and triggers instruments</div>
+                <div class="overview-image-container stack-vertical">
+                    <!-- Stacked vertically for adaptive mobile/web -->
+                    <figure class="stack-item">
+                        <img src="mission-conops.jpg" alt="Mission concept of operations for the detector" class="overview-image" loading="lazy">
+                        <figcaption class="image-caption">Mission concept: spacecraft transits Enceladus’ plume and triggers instruments</figcaption>
+                    </figure>
+                    <figure class="stack-item">
+                        <img src="sensor-image.jpg" alt="Exterior of the detector sensor body" class="overview-image" loading="lazy">
+                        <figcaption class="image-caption">Sensor body: Faraday-caged housing and interfaces</figcaption>
+                    </figure>
+                    <figure class="stack-item">
+                        <img src="wire-harness-bare.jpg" alt="Associated computer and bare wire harness" class="overview-image" loading="lazy">
+                        <figcaption class="image-caption">Associated computer and wire harness used for acquisition and control</figcaption>
+                    </figure>
                 </div>
                 <div class="overview-content">
                     <h3 class="overview-heading">Mission</h3>
@@ -122,7 +136,7 @@
         </div>
     </section>
 
-    <!-- Detailed Design Section -->
+    <!-- Design & Development -->
     <section id="details" class="section">
         <div class="container">
             <h2 class="section-title">Design & Development</h2>
@@ -133,11 +147,6 @@
                 </div>
                 <div class="detail-content">
                     <h3 class="detail-title">Electronics Design</h3>
-                    <!-- PCB image supports this subsection -->
-                    <div class="overview-image-container" style="margin-bottom: 1rem;">
-                        <img src="pcb_board.jpg" alt="Custom PCB for charge sensing and ADC interface" class="overview-image" loading="lazy">
-                        <div class="image-caption">Custom PCB used for charge amplification and 1 MSPS ADC acquisition</div>
-                    </div>
                     <p class="detail-text">
                         Designed a custom PCB layouts for sensor signal conditioning, amplification, and digitization. Implemented low-noise circuitry to handle extremely small charge signals (~300 electrons) from individual particle impacts.
                     </p>
@@ -147,6 +156,11 @@
                         <li>EMI/EMC protected system for noise reduction</li>
                         <li>Surface mount PCB development</li>
                     </ul>
+                    <!-- Image centered at the bottom of the item -->
+                    <div class="centered-media">
+                        <img src="pcb_board.jpg" alt="Custom PCB for charge sensing and ADC interface" loading="lazy">
+                        <div class="image-caption">Custom PCB used for charge amplification and 1 MSPS ADC acquisition</div>
+                    </div>
                 </div>
             </div>
 
@@ -156,11 +170,6 @@
                 </div>
                 <div class="detail-content">
                     <h3 class="detail-title">Mechanical Systems</h3>
-                    <!-- Component layout supports packaging/faraday cage narrative -->
-                    <div class="overview-image-container" style="margin-bottom: 1rem;">
-                        <img src="component-layout.jpg" alt="Component layout within the sensor housing" class="overview-image" loading="lazy">
-                        <div class="image-caption">Internal component layout and Faraday enclosure strategy</div>
-                    </div>
                     <p class="detail-text">
                         Developed mechanical housing and sensor structures using SolidWorks. Ensured structural integrity for shipping and handling while maintaining required faraday cage capabilities, electrical noise isolation, and thermal dissipation requirements.
                     </p>
@@ -170,6 +179,11 @@
                         <li>EMI/EMC noise analysis and optimization</li>
                         <li>Management of extremely tight packaging restrictions</li>
                     </ul>
+                    <!-- Image centered at the bottom of the item -->
+                    <div class="centered-media">
+                        <img src="component-layout.jpg" alt="Component layout within the sensor housing" loading="lazy">
+                        <div class="image-caption">Internal component layout and Faraday enclosure strategy</div>
+                    </div>
                 </div>
             </div>
 
@@ -193,7 +207,7 @@
         </div>
     </section>
 
-    <!-- Technical Specifications Section -->
+    <!-- Technical Specifications -->
     <section id="technical" class="section section-white">
         <div class="container">
             <h2 class="section-title">Technical Specifications</h2>
@@ -252,7 +266,6 @@
 
             <div class="diagram-section">
                 <h3 class="diagram-title">System Architecture</h3>
-                <!-- Replace placeholder with the block diagram image -->
                 <div class="overview-image-container">
                     <img src="block-diagram.jpg" alt="System block diagram of the I2CE detector" class="overview-image" loading="lazy">
                     <div class="image-caption">Functional block diagram: conduction + induction sensing paths to ADC/Raspberry Pi</div>
@@ -261,8 +274,8 @@
         </div>
     </section>
 
-    <!-- Results & Impact Section -->
-   <section id="results" class="section">
+    <!-- Results & Impact -->
+    <section id="results" class="section">
       <div class="container">
         <h2 class="section-title">Results &amp; Impact</h2>
         
@@ -281,13 +294,11 @@
           </div>
         </div>
 
-        <!-- Main results plot belongs prominently here -->
         <div class="overview-image-container" style="margin-top: 1.5rem;">
           <img src="sensor_results.jpg" alt="Sensor results compared with facility reference showing strong agreement" class="overview-image" loading="lazy">
           <div class="image-caption">Measured charge flux vs facility reference: alternating 10 s pulses and intra-pulse structure matched</div>
         </div>
 
-        <!-- Vacuum testing photo reinforces environmental readiness -->
         <div class="overview-image-container" style="margin-top: 1rem;">
           <img src="vacuum-testing.jpg" alt="Vacuum chamber test at the facility" class="overview-image" loading="lazy">
           <div class="image-caption">Vacuum survivability and particle testing at the ice grain accelerator facility</div>
@@ -296,7 +307,7 @@
         <div class="results-content">
           <h3 class="results-heading">Key Achievements</h3>
           <div class="achievement-grid">
-              <div class="achievement-item">
+            <div class="achievement-item">
               <i data-lucide="check-circle" class="achievement-icon"></i>
               <div class="achievement-text">
                 <h4>Personally Received Award for Technical Knowledge</h4>
@@ -353,8 +364,7 @@
       </div>
     </section>
 
-
-    <!-- Image Gallery Section -->
+    <!-- Image Gallery -->
     <section class="section section-white">
         <div class="container-wide">
             <h2 class="section-title">Project Gallery</h2>
@@ -452,10 +462,7 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
