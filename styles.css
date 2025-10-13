@@ -1217,9 +1217,6 @@ margin-bottom: 1rem;
 
 /* On small screens, hide the brand text but keep the icon */
 @media (max-width: 767px) {
-  .nav-brand .brand-name {
-    display: none;      /* hide "Jack Huston" text */
-  }
-  .nav-brand {
-    gap: 0.25rem;       /* tighten spacing so the icon is compact */
-  }
+  .nav-brand { display: none; }
+}
+
