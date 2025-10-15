@@ -65,7 +65,7 @@
             <div class="project-meta">
                 <div class="meta-item">
                     <i data-lucide="calendar"></i>
-                    <span>2022 - 2024</span>
+                    <span>2022 - 2023</span>
                 </div>
                 <div class="meta-item">
                     <i data-lucide="map-pin"></i>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="meta-item">
                     <i data-lucide="users"></i>
-                    <span>Team of 9</span>
+                    <span>Senior Project Team of 9</span>
                 </div>
             </div>
         </div>
@@ -112,7 +112,7 @@
                     
                     <h3 class="overview-heading">Solution</h3>
                     <p class="overview-text">
-                        Constructed a dual-mode electrostatic charge detector that combines a conduction-based cup (bulk charge flux) with a grid-based induction stage (individual particle charge and speed), using custom charge amplifiers, a 1 Million samples per second (MSPS) ADC, and a convolution filter event detection system on a Raspberry Pi.
+                        Constructed a dual-mode electrostatic charge detector that combines a conduction-based cup (bulk charge flux) with a grid-based induction stage (individual particle charge and speed), using custom charge amplifiers, a 1 Million samples per second (MSPS) ADC, and a convolution filter event detection system on a Raspberry Pi. My main role involved the development of the sensor electronics and software integration.
                     </p>
                 </div>
             </div>
@@ -222,7 +222,7 @@
                 <div class="spec-content">
                   <p><strong>Input Rails:</strong> ±9 V to sensor; locally regulated to +3.3 V (ADC) and ±5 V (CSAs)</p>
                   <p><strong>Power Budget:</strong> ≤ 10 W (project requirement)</p>
-                  <p><strong>Interface:</strong> SPI ADC → Raspberry Pi 4 (1 MSPS per channel)</p>
+                  <p><strong>Interface:</strong> SPI ADC → Raspberry Pi 4 (1 MSPS per channel) through 25 pin D-Sub</p>
                 </div>
               </div>
             
@@ -258,9 +258,9 @@
                 <div class="spec-content">
                   <p><strong>Particle Size (target):</strong> 0.5–4 µm</p>
                   <p><strong>Speed (measured):</strong> 100–300 m/s via dual sensing grids</p>
-                  <p><strong>Charge Sensitivity (induction):</strong> ~0.05–0.5 fC per particle</p>
-                  <p><strong>Charge Flux (conduction):</strong> Tracked vs reference; design environment ~86 pC/s</p>
-                  <p><strong>Sampling:</strong> 1 MSPS ADC; matched-filter event detection</p>
+                  <p><strong>Charge Sensitivity (induction):</strong> ~0.05–0.5 fC per particle (3000 extra electons)</p>
+                  <p><strong>Charge Flux (conduction):</strong> Tracked vs reference; design environment ~86 pC/s (500 M electrons/sec)</p>
+                  <p><strong>Sampling:</strong> 1 MSPS ADC; convolution-filter event detection</p>
                 </div>
               </div>
             </div>
@@ -309,7 +309,7 @@
           <h3 class="results-heading">Key Achievements</h3>
           <div class="achievement-grid">
             <div class="achievement-item">
-              <i data-lucide="check-circle" class="achievement-icon"></i>
+              <i data-lucide="trophy" class="achievement-icon"></i>
               <div class="achievement-text">
                 <h4>Personally Received Award for Technical Knowledge</h4>
                 <p>Was publicly recognized at graduation for exceptional technical knowledge throughout the year for my work on this project. Was 1 of only 2 recipients who received this award.</p>
@@ -326,7 +326,7 @@
               <i data-lucide="check-circle" class="achievement-icon"></i>
               <div class="achievement-text">
                 <h4>Conduction Performance &amp; Calibration</h4>
-                <p>Generated calibration curve with 0.54% average error (all datasets within ±10%). In vacuum, sensor's measured charge flux matched test facility’s alternating 10 s pulses and intra-pulse structure with ~0.4 pC/s mean difference (Highly accurate).</p>
+                <p>Generated calibration curve with 0.54% average error. In vacuum, sensor's measured charge flux matched test facility’s alternating 10 s pulses and intra-pulse structure with ~0.4 pC/s mean difference (Highly accurate).</p>
               </div>
             </div>
             <div class="achievement-item">
